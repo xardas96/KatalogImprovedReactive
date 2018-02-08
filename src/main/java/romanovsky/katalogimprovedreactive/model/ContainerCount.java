@@ -2,19 +2,26 @@ package romanovsky.katalogimprovedreactive.model;
 
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Objects;
+import lombok.NoArgsConstructor;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 
 import javax.persistence.*;
 
 //TODO remove this and the updating trigger from the database and count it ad-hoc
 @Entity
 @Table(name = "ContainerCounts")
+@RequiredArgsConstructor
+@NoArgsConstructor
 public class ContainerCount {
 
     @Id
     @PrimaryKeyJoinColumn(name = "containerTypeID", referencedColumnName = "containerTypeID")
+    @NonNull
     private Integer containerTypeId;
 
     @Column(name = "diskCount", nullable = false)
+    @NonNull
     private Integer diskCount;
 
     public Integer getContainerTypeId() {

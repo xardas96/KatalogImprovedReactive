@@ -8,7 +8,6 @@ import lombok.RequiredArgsConstructor;
 
 import javax.persistence.*;
 import java.util.List;
-import java.util.Set;
 
 @Entity
 @Table(name = "ContainerTypes")
@@ -28,8 +27,8 @@ public class ContainerType {
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "type", fetch = FetchType.EAGER)
     private List<Container> containers;
 
-    public List<Container> getContainers() {
-        return containers;
+    public Integer getId() {
+        return id;
     }
 
     @Override
