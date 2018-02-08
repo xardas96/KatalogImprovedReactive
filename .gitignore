@@ -1,2 +1,2 @@
 .idea/
-src/main/resources/database.s3db
+src/test/resources/database.s3db
